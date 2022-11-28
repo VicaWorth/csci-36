@@ -22,11 +22,14 @@
 
 <p class="text-dark pb-5"><%= assessment.notes %> </p>
 
-<!-- DATE DISPLAYED AS YYYY-MM-DD -->
+<!-- DATE DISPLAYED AS MONTH D, YYYY -->
+<% const months = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug",
+                   "Sept", "Oct", "Nov", "Dec"] %>
+                   
 <p class="text-dark"><b>Submission Date: </b>
-    <%= assessment.date_assessed.getFullYear() %>-<!--
-    --><%= assessment.date_assessed.getMonth() %>-<!--
-    --><%= assessment.date_assessed.getDate() %>
+    <%= months[assessment.date_assessed.getMonth()] %>
+    <%= assessment.date_assessed.getDate() %>,
+    <%= assessment.date_assessed.getFullYear() %>
 </p>
 
 <p class="text-dark"><b>Submitted By: </b><%= assessment.discussion_completed_by %> </p>

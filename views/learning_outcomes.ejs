@@ -3,18 +3,26 @@ date they were last updated. Data is aquired from learning_outcomes.js. -->
 
 <h1 class="py-2 pt-5">Learning Outcomes Timeline</h2>
 
+<% const months = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug",
+                   "Sept", "Oct", "Nov", "Dec"] %>
 
 <!-- PLOs that are overdue for an update -->
 <!-- Table is collapsible; click here to toggle -->
 <h3 class="mt-5 mb-0 p-2 high_priority" data-toggle="collapse" data-target="#plo-table-1">
     High Priority PLOs
+    <p class="mb-0 pt-2">Program Learning Outcomes that are overdue for an update</p>
 </h3>
-<table id="plo-table-1" class="table table-dark outcome_table collapse">
+<table id="plo-table-1" class="w-100 table table-dark outcome_table collapse">
     <thead>
-        <th>Outcome ID</th>
-        <th>Program</th>
-        <th>Last Updated</th>
-        <th>Update By</th>
+        <th class="col-3">Outcome ID</th>
+        <th class="col-5">Program</th>
+        <th class="col-2">Last Updated</th>
+        <th class="col-2">Update By</th>
+        <!-- This filler column has been added as a messy fix for a problem 
+        where the table rows would not expand to fill the table container unless
+        they were wider than the container. Cause unknown, but possibly related
+        to the .collapse class -->
+        <th class="col-0"></th>
     </thead>
     <tbody>
         <!-- row_counter lets me assign a unique id to each row -->
@@ -22,19 +30,28 @@ date they were last updated. Data is aquired from learning_outcomes.js. -->
         <% let row_counter = 0 %>
         <% for (let outcome of PLOs_1) { %>
             <!-- Outcome description is collapsible; click anywhere on the row to toggle -->
-            <tr data-toggle="collapse" data-target="#pt1-desc-<%=row_counter%>">
+            <tr class="w-100" data-toggle="collapse" data-target="#pt1-desc-<%=row_counter%>">
                 <td><%=outcome.outcome_id%></td>
                 <td>
                     <a href="/programs/<%=outcome.domain_id%>">
                         <%=outcome.domain_name%>
                     </a>
                 </td>
-                <td><%=outcome.last_updated%></td>
-                <td><%=outcome.next_update%></td>
+                <td>
+                    <%= months[outcome.last_updated.getMonth()] %>
+                    <%= outcome.last_updated.getDate() %>,
+                    <%= outcome.last_updated.getFullYear() %>
+                </td>
+                <td>
+                    <%= months[outcome.next_update.getMonth()] %>
+                    <%= outcome.next_update.getDate() %>,
+                    <%= outcome.next_update.getFullYear() %>
+                </td>
+                <td></td>
             </tr>
             <!-- Collapsible description spans entire row -->
             <tr id="pt1-desc-<%=row_counter%>" class="collapse">
-                <td colspan="4"><%=outcome.outcome_description%></td>
+                <td colspan="5"><%=outcome.outcome_description%></td>
             </tr>
             <% row_counter += 1 %>
         <% } %>
@@ -45,13 +62,15 @@ date they were last updated. Data is aquired from learning_outcomes.js. -->
 <!-- CLOs that are overdue for an update -->
 <h3 class="mt-5 mb-0 p-2 high_priority" data-toggle="collapse" data-target="#clo-table-1">
     High Priority CLOs
+    <p class="mb-0 pt-2">Course Learning Outcomes that are overdue for an update</p>
 </h3>
 <table id="clo-table-1" class="table table-dark outcome_table collapse">
     <thead>
-        <th>Outcome ID</th>
-        <th>Course</th>
-        <th>Last Updated</th>
-        <th>Update By</th>
+        <th class="col-3">Outcome ID</th>
+        <th class="col-5">Course</th>
+        <th class="col-2">Last Updated</th>
+        <th class="col-2">Update By</th>
+        <th class="col-0"></th>
     </thead>
     <tbody>
         <% row_counter = 0 %>
@@ -59,12 +78,21 @@ date they were last updated. Data is aquired from learning_outcomes.js. -->
             <tr data-toggle="collapse" data-target="#ct1-desc-<%=row_counter%>">
                 <td><%=outcome.outcome_id%></td>
                 <td><%=outcome.domain_name%></td>
-                <td><%=outcome.last_updated%></td>
-                <td><%=outcome.next_update%></td>
+                <td>
+                    <%= months[outcome.last_updated.getMonth()] %>
+                    <%= outcome.last_updated.getDate() %>,
+                    <%= outcome.last_updated.getFullYear() %>
+                </td>
+                <td>
+                    <%= months[outcome.next_update.getMonth()] %>
+                    <%= outcome.next_update.getDate() %>,
+                    <%= outcome.next_update.getFullYear() %>
+                </td>
+                <td></td>
             </tr>
             <!-- Collapsible description spans entire row -->
             <tr id="ct1-desc-<%=row_counter%>" class="collapse">
-                <td colspan="4"><%=outcome.outcome_description%></td>
+                <td colspan="5"><%=outcome.outcome_description%></td>
             </tr>
             <% row_counter += 1 %>
         <% } %>
@@ -75,13 +103,15 @@ date they were last updated. Data is aquired from learning_outcomes.js. -->
 <!-- PLOs that should be updated within the year -->
 <h3 class="mt-5 mb-0 p-2 med_priority" data-toggle="collapse" data-target="#plo-table-2">
     Medium Priority PLOs
+    <p class="mb-0 pt-2">Program Learning Outcomes that should be updated within the year</p>
 </h3>
 <table id="plo-table-2" class="table table-dark outcome_table collapse">
     <thead>
-        <th>Outcome ID</th>
-        <th>Program</th>
-        <th>Last Updated</th>
-        <th>Update By</th>
+        <th class="col-3">Outcome ID</th>
+        <th class="col-5">Program</th>
+        <th class="col-2">Last Updated</th>
+        <th class="col-2">Update By</th>
+        <th class="col-0"></th>
     </thead>
     <tbody>
         <% row_counter = 0 %>
@@ -93,12 +123,21 @@ date they were last updated. Data is aquired from learning_outcomes.js. -->
                         <%=outcome.domain_name%>
                     </a>
                 </td>
-                <td><%=outcome.last_updated%></td>
-                <td><%=outcome.next_update%></td>
+                <td>
+                    <%= months[outcome.last_updated.getMonth()] %>
+                    <%= outcome.last_updated.getDate() %>,
+                    <%= outcome.last_updated.getFullYear() %>
+                </td>
+                <td>
+                    <%= months[outcome.next_update.getMonth()] %>
+                    <%= outcome.next_update.getDate() %>,
+                    <%= outcome.next_update.getFullYear() %>
+                </td>
+                <td></td>
             </tr>
             <!-- Collapsible description spans entire row -->
             <tr id="pt2-desc-<%=row_counter%>" class="collapse">
-                <td colspan="4"><%=outcome.outcome_description%></td>
+                <td colspan="5"><%=outcome.outcome_description%></td>
             </tr>
             <% row_counter += 1 %>
         <% } %>
@@ -109,13 +148,15 @@ date they were last updated. Data is aquired from learning_outcomes.js. -->
 <!-- CLOs that should be updated within the year -->
 <h3 class="mt-5 mb-0 p-2 med_priority" data-toggle="collapse" data-target="#clo-table-2">
     Medium Priority CLOs
+    <p class="mb-0 pt-2">Course Learning Outcomes that should be updated within the year</p>
 </h3>
 <table id="clo-table-2" class="table table-dark outcome_table collapse">
     <thead>
-        <th>Outcome ID</th>
-        <th>Course</th>
-        <th>Last Updated</th>
-        <th>Update By</th>
+        <th class="col-3">Outcome ID</th>
+        <th class="col-3">Course</th>
+        <th class="col-3">Last Updated</th>
+        <th class="col-3">Update By</th>
+        <th class="col-0"></th>
     </thead>
     <tbody>
         <% row_counter = 0 %>
@@ -123,12 +164,21 @@ date they were last updated. Data is aquired from learning_outcomes.js. -->
             <tr data-toggle="collapse" data-target="#ct2-desc-<%=row_counter%>">
                 <td><%=outcome.outcome_id%></td>
                 <td><%=outcome.domain_name%></td>
-                <td><%=outcome.last_updated%></td>
-                <td><%=outcome.next_update%></td>
+                <td>
+                    <%= months[outcome.last_updated.getMonth()] %>
+                    <%= outcome.last_updated.getDate() %>,
+                    <%= outcome.last_updated.getFullYear() %>
+                </td>
+                <td>
+                    <%= months[outcome.next_update.getMonth()] %>
+                    <%= outcome.next_update.getDate() %>,
+                    <%= outcome.next_update.getFullYear() %>
+                </td>
+                <td></td>
             </tr>
             <!-- Collapsible description spans entire row -->
             <tr id="ct2-desc-<%=row_counter%>" class="collapse">
-                <td colspan="4"><%=outcome.outcome_description%></td>
+                <td colspan="5"><%=outcome.outcome_description%></td>
             </tr>
             <% row_counter += 1 %>
         <% } %>
@@ -139,13 +189,15 @@ date they were last updated. Data is aquired from learning_outcomes.js. -->
 <!-- PLOs that have more than a year until they need to be updated -->
 <h3 class="mt-5 mb-0 p-2 low_priority" data-toggle="collapse" data-target="#plo-table-3">
     Low Priority PLOs
+    <p class="mb-0 pt-2">Program Learning Outcomes that do not need to be updated for at least a year</p>
 </h3>
 <table id="plo-table-3" class="table table-dark collapse outcome_table">
     <thead>
-        <th>Outcome ID</th>
-        <th>Program</th>
-        <th>Last Updated</th>
-        <th>Update By</th>
+        <th class="col-3">Outcome ID</th>
+        <th class="col-5">Program</th>
+        <th class="col-2">Last Updated</th>
+        <th class="col-2">Update By</th>
+        <th class="col-0"></th>
     </thead>
     <tbody>
         <% row_counter = 0 %>
@@ -157,12 +209,21 @@ date they were last updated. Data is aquired from learning_outcomes.js. -->
                         <%=outcome.domain_name%>
                     </a>
                 </td>
-                <td><%=outcome.last_updated%></td>
-                <td><%=outcome.next_update%></td>
+                <td>
+                    <%= months[outcome.last_updated.getMonth()] %>
+                    <%= outcome.last_updated.getDate() %>,
+                    <%= outcome.last_updated.getFullYear() %>
+                </td>
+                <td>
+                    <%= months[outcome.next_update.getMonth()] %>
+                    <%= outcome.next_update.getDate() %>,
+                    <%= outcome.next_update.getFullYear() %>
+                </td>
+                <td></td>
             </tr>
             <!-- Collapsible description spans entire row -->
             <tr id="pt3-desc-<%=row_counter%>" class="collapse">
-                <td colspan="4"><%=outcome.outcome_description%></td>
+                <td colspan="5"><%=outcome.outcome_description%></td>
             </tr>
             <% row_counter += 1 %>
         <% } %>
@@ -173,13 +234,15 @@ date they were last updated. Data is aquired from learning_outcomes.js. -->
 <!-- CLOs that have more than a year until they need to be updated -->
 <h3 class="mt-5 mb-0 p-2 low_priority" data-toggle="collapse" data-target="#clo-table-3">
     Low Priority CLOs
+    <p class="mb-0 pt-2">Course Learning Outcomes that do not need to be updated for at least a year</p>
 </h3>
 <table id="clo-table-3" class="table table-dark collapse outcome_table">
     <thead>
-        <th>Outcome ID</th>
-        <th>Course</th>
-        <th>Last Updated</th>
-        <th>Update By</th>
+        <th class="col-3">Outcome ID</th>
+        <th class="col-5">Course</th>
+        <th class="col-2">Last Updated</th>
+        <th class="col-2">Update By</th>
+        <th class="col-0"></th>
     </thead>
     <tbody>
         <% row_counter = 0 %>
@@ -187,12 +250,21 @@ date they were last updated. Data is aquired from learning_outcomes.js. -->
             <tr data-toggle="collapse" data-target="#ct3-desc-<%=row_counter%>">
                 <td><%=outcome.outcome_id%></td>
                 <td><%=outcome.domain_name%></td>
-                <td><%=outcome.last_updated%></td>
-                <td><%=outcome.next_update%></td>
+                <td>
+                    <%= months[outcome.last_updated.getMonth()] %>
+                    <%= outcome.last_updated.getDate() %>,
+                    <%= outcome.last_updated.getFullYear() %>
+                </td>
+                <td>
+                    <%= months[outcome.next_update.getMonth()] %>
+                    <%= outcome.next_update.getDate() %>,
+                    <%= outcome.next_update.getFullYear() %>
+                </td>
+                <td></td>
             </tr>
             <!-- Collapsible description spans entire row -->
             <tr id="ct3-desc-<%=row_counter%>" class="collapse">
-                <td colspan="4"><%=outcome.outcome_description%></td>
+                <td colspan="5"><%=outcome.outcome_description%></td>
             </tr>
             <% row_counter += 1 %>
         <% } %>
