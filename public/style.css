@@ -118,6 +118,10 @@ textarea {
 
 /* LEARNING_OUTCOMES.EJS STYLES ***********************************************/
 
+h3 > p {
+    font-size: 0.5em;
+}
+
 .high_priority {
     color: white;
     background-color: black;
