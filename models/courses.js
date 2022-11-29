@@ -18,5 +18,5 @@ const courseModel = (sequelize, dataTypes) => {
   return courses;
 };
 
-//expots the model to be used elsewhere in the program
+//exports the model to be used elsewhere in the program
 export { courseModel };
