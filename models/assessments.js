@@ -1,3 +1,4 @@
+//function to create assessments model
 const assessmentModel = (sequelize, dataTypes) => {
   const assessments = sequelize.define('assessments', {
       discussion_id: {
@@ -53,5 +54,5 @@ const assessmentModel = (sequelize, dataTypes) => {
   
   return assessments;
 };
-
+//exports the assessments table to be used in other parts of the program
 export { assessmentModel };

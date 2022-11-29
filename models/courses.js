@@ -1,3 +1,4 @@
+// creates the model for the course table 
 const courseModel = (sequelize, dataTypes) => {
   const courses = sequelize.define('courses', {
       cour_id: {
@@ -17,4 +18,5 @@ const courseModel = (sequelize, dataTypes) => {
   return courses;
 };
 
+//expots the model to be used elsewhere in the program
 export { courseModel };

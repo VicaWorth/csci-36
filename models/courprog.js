@@ -1,3 +1,5 @@
+// function to create the course programs Model
+
 const courprogModel = (sequelize, dataTypes) => {
     const courprog = sequelize.define('courprog', {
         courprog_id: {
@@ -8,5 +10,5 @@ const courprogModel = (sequelize, dataTypes) => {
     });
     return courprog;
 };
-
+//export the course program table to be used elsewhre in the program
 export default courprogModel;
