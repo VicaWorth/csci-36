@@ -16,7 +16,6 @@ import departmentRoute from './routes/departments.js';
 import programRoute from './routes/programs.js';
 import formRoute from './routes/form.js';
 import reportsRoute from './routes/reports.js';
-import updates from './routes/updates.js';
 import loRoute from './routes/learning_outcomes.js';
 
 // bind express class to 'server' and define port (process.env.PORT is for non-local deployment)
@@ -42,7 +41,6 @@ server.use(departmentRoute);
 server.use(programRoute);
 server.use(formRoute);
 server.use(reportsRoute);
-server.use(updates);
 server.use(loRoute);
 
 // start nodejs server, It will listen for requests on PORT.
