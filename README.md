@@ -77,14 +77,19 @@ CREATE USER 'csci36'@'localhost' IDENTIFIED BY 'superDUPER@m3';
 
 GRANT ALL PRIVILEGES ON *.* TO 'csci36'@'localhost';
 
+<<<<<<< HEAD
 CREATE DATABASE home;
+=======
+CREATE DATABASE home ;
+>>>>>>> 8e0f62d3e3e032c346400deb2a8f74ed40fd7179
 ```
 
 #### AFTER STARTING SERVER ####
+```
 USE home;
 
 SHOW TABLES;
-
+```
 ### Video Help ###
 [A video was created to aid with setup](https://www.youtube.com/watch?v=Ni4ZJvIjiOE)
 
