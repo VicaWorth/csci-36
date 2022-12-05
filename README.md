@@ -81,10 +81,11 @@ CREATE DATABASE home ;
 ```
 
 #### AFTER STARTING SERVER ####
+```
 USE home;
 
 SHOW TABLES;
-
+```
 ### Video Help ###
 [A video was created to aid with setup](https://www.youtube.com/watch?v=Ni4ZJvIjiOE)
 
