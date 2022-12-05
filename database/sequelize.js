@@ -8,7 +8,7 @@ import associations from '../models/associates2.js';
 // Table used for storing form information
 import { assessmentModel } from '../models/assessments.js';
 import { courseModel } from '../models/courses.js';
-import courprogModel from '../models/courprog.js';
+import courprogModel from '../models/courprog.js'; // This import is using the default keyword
 import { coutcomeModel } from '../models/coutcomes.js';
 import { poutcomeModel } from '../models/poutcomes.js';
 

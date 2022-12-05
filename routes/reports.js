@@ -3,6 +3,7 @@ import { assessments } from '../database/sequelize.js';
 
 const router = express.Router();
 
+// all reports
 router.get("/reports", async (req, res) => {
   const allAssessments =  await assessments.findAll({order: ['discussion_id'],raw: true});
     res.render("reports", { title: "SLO Tracker - Reports",
@@ -10,7 +11,7 @@ router.get("/reports", async (req, res) => {
 });
 
 
-//single_report
+// single report
 router.get("/reports/:discussion_id", async (req, res) => {
     const theAssessment = await assessments.findOne({
         where: {

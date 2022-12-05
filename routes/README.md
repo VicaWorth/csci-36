@@ -1,6 +1,8 @@
 # WELCOME TO THE ROUTES FOLDER
 
-This is where the server handles a request from the browser/client. Since everything is a get request theres no real need for controllers I think if you are familiar with MVC. So Whats happening?...
+This is where the server handles a request from the browser/client. 
+Since everything is a get request theres no real need for controllers I think if you are familiar with MVC. 
+So Whats happening?...
 
 Starting from the top.
 
