@@ -9,7 +9,7 @@
 - Allows users to view those submissions later
 
 ## What should I know before working on this project? ##
-YOU MUST TAKE WEB DEV 1 BEFORE WORKING ON THIS PROJECT.
+**YOU MUST TAKE WEB DEV 1 BEFORE WORKING ON THIS PROJECT.**
 Those who have not taken Web Dev 2 can still manage.
 Those who have taken Web Dev 2 will be the most prepared.
 
@@ -32,6 +32,7 @@ For more information, please spend some time reading [the ExpressJS documentatio
 These guides helps you set up GitHub, MySQL, and start the scraper.
 
 ### GitHub
+```
 ssh-keygen -t ed25519 -C "your_email@example.com"
 
 eval "$(ssh-agent -s)"
@@ -55,15 +56,17 @@ git add .
 git commit -m "My first commit"
 
 git push origin VicaWorth
-
+```
 #### Setting up MySQL ####
+```
 sudo apt-get update
 
 sudo apt-get install mysql-server
 
 sudo mysql_secure_installation
-
+```
 #### Password I used ####
+```
 superDUPER@m3
 
 sudo service mysql status
@@ -75,7 +78,7 @@ CREATE USER 'csci36'@'localhost' IDENTIFIED BY 'superDUPER@m3';
 GRANT ALL PRIVILEGES ON *.* TO 'csci36'@'localhost';
 
 CREATE DATABASE home ;
-
+```
 
 #### AFTER STARTING SERVER ####
 USE home;
