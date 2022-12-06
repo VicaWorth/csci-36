@@ -1,7 +1,5 @@
 # WELCOME TO THE MODELS FOLDER! #
 
-Models are the frame for where we store the data. The models are made with javascript objects but they translate directly to mysql 'stuff'. 
-When data is scraped it is stored in the database using these models.
+Models are JavaScript objects used to create, read, update, and delete from MySQL tables. They allow us to easily access data from the database without having use direct MySQL statements. Instead, we access the sequelize object. 
 
-Each file in this folder containts functions that create the models then exports them to be used in
-other places of the program.
+Each file in this folder creates a table in the database. Other parts of our program uses this model to get data from the database.
