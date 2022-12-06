@@ -72,7 +72,6 @@ router.get("/learning_outcomes", async (req, res) => {
                                        program_name, last_update);
         
         // Add PLO to the appropriate array
-        
         let highPriorityDate = new Date();
         highPriorityDate.setFullYear(highPriorityDate.getFullYear() - 6);
         
@@ -147,7 +146,6 @@ router.get("/learning_outcomes", async (req, res) => {
                                        last_update);
             
             // Add CLO to the appropriate array
-            
             let highPriorityDate = new Date();
             highPriorityDate.setFullYear(highPriorityDate.getFullYear() - 6);
             
