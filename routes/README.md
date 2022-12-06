@@ -12,6 +12,7 @@ Starting from the top.
 4. Once the response is finished and the page is delivered, the server waits for another request or continues to handle other functions. 
 
 A somewhat visual description of this is:
-1. The user clicks on a link, which sends a request to the server.js. (View to controller)
-2. Server.js interprets the request via the routes/link/ . (Controller)
-3. The page is given back to the user and now can be used. (Controller to view)
+1. The user clicks on a link, which sends a request to the server.js. (view to controller)
+2. Server.js interprets the request via the routes/link/, begins to take data from the database to display on the page. (controller to model)
+3. Data is pulled and brought to the controller (model to controller)
+4. The page is given back to the user and now can be used. (controller to view)
