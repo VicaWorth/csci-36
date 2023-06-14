@@ -114,7 +114,7 @@ Those folders include:
 Here is our archived discord: [FA-22](https://discord.gg/2hMQsFR6Ak)
 
 ## Appendix ##
-LO: Learning outcome
-PLO: Program Learning Outcome
-SLO: Student Learning Outcome
-PLO and SLO are sometimes used interchangeably on Butte's pages. 
+- LO: Learning outcome
+- PLO: Program Learning Outcome
+- SLO: Student Learning Outcome
+- PLO and SLO are sometimes used interchangeably on Butte's pages. 
