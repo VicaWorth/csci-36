@@ -65,15 +65,15 @@ sudo apt-get install mysql-server
 
 sudo mysql_secure_installation
 ```
-#### Password I used ####
+#### Password Setup ####
 ```
-superDUPER@m3
+[password]
 
 sudo service mysql status
 
 sudo mysql -u root -p
 
-CREATE USER 'csci36'@'localhost' IDENTIFIED BY 'superDUPER@m3';
+CREATE USER 'csci36'@'localhost' IDENTIFIED BY '[password]';
 
 GRANT ALL PRIVILEGES ON *.* TO 'csci36'@'localhost';
 
